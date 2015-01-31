@@ -84,7 +84,7 @@ object SbtAutoprefixer extends AutoPlugin {
             (engineType in autoprefixer).value,
             (command in autoprefixer).value,
             (nodeModuleDirectories in Assets).value.map(_.getPath),            
-            (nodeModuleDirectories in Assets).value.last / "autoprefixer" / "bin" / "autoprefixer",
+            (nodeModuleDirectories in Assets).value.last / "autoprefixer" / "autoprefixer",
             allArgs,
             (timeoutPerSource in autoprefixer).value * autoprefixerMappings.size
           )
