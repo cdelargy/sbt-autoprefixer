@@ -65,15 +65,12 @@ object SbtAutoprefixer extends AutoPlugin {
 
           val inputFileArgs = inputFiles.map(_.getPath)
 
-          val cascadeArgs = if (cascade.value) Seq("--cascade") else Nil
-
           val sourceMapArgs = if (sourceMap.value) Seq("--map") else Nil
 
           val inlineSourceMapArgs = if (inlineSourceMap.value) Seq("--inline-map") else Nil
 
           val allArgs = Seq() ++ 
             inputFileArgs ++
-            cascadeArgs ++
             sourceMapArgs ++
             inlineSourceMapArgs
 
