@@ -12,7 +12,6 @@ object Import {
 
   object AutoprefixerKeys {
     val buildDir = SettingKey[File]("autoprefixer-build-dir", "Where autoprefixer will read from.")
-    val cascade = SettingKey[Boolean]("autoprefixer-cascade", "Creates nice visual cascade of prefixes. The default is that cascade is enabled (true).")
     val inlineSourceMap = SettingKey[Boolean]("autoprefixer-inline-source-map", "Enables inline source maps by data:uri to annotation comment. The default is that inline source maps are dsiabled (false).")
     val sourceMap = SettingKey[Boolean]("autoprefixer-source-map", "Enables source maps. The default is that source maps are enabled (true).")
   }
@@ -39,7 +38,6 @@ object SbtAutoprefixer extends AutoPlugin {
     excludeFilter in autoprefixer := HiddenFileFilter,
     includeFilter in autoprefixer := GlobFilter("*.css"),
     resourceManaged in autoprefixer := webTarget.value / autoprefixer.key.label,
-    cascade := true,
     sourceMap := true,
     inlineSourceMap := false,
     autoprefixer := runAutoprefixer.dependsOn(WebKeys.nodeModules in Assets).value
