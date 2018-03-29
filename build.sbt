@@ -1,6 +1,6 @@
 sbtPlugin := true
 
-organization := "net.matthewrennie.sbt"
+organization := "temp.cdelargy.hack"
 
 name := "sbt-autoprefixer"
 
